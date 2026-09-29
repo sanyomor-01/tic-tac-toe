@@ -5,7 +5,41 @@ cell.forEach(cell => {
 })
 
 
+
+let running = true
+let currentPlayer = 'X'
+
+
+
+function clicked() {
+    if (!running) {
+        return
+    }
+
+    let index = this.getAttribute('data-index')
+
+    if (this.textContent === '') {
+        this.textContent = currentPlayer
+        if (currentPlayer === 'X') {
+            currentPlayer = 'O'
+            statusMsg.textContent = `O's turn`
+        }
+        else {
+            currentPlayer = 'X'
+            statusMsg.textContent = `X's turn`
+        }
+    }
+
+    if (running) {
+        let winner = checkWinner()
+        if (winner) {
+            running = false
+        }
+    }
+}
+
 function checkWinner() {
+
     // possible winning combinations
     const winningCombos = [
         [0, 1, 2],
@@ -28,31 +62,9 @@ function checkWinner() {
             cell[a].textContent === cell[b].textContent &&
             cell[a].textContent === cell[c].textContent) {
             statusMsg.textContent = `${cell[a].textContent} wins!`
-            return
+            return true
         }
     }
+    return false
 
-}
-
-let running = false
-let currentPlayer = 'X'
-
-
-
-function clicked() {
-
-    let index = this.getAttribute('data-index')
-
-    if (this.textContent === '') {
-        this.textContent = currentPlayer
-        if (currentPlayer === 'X') {
-            currentPlayer = 'O'
-            statusMsg.textContent = `O's turn`
-        }
-        else {
-            currentPlayer = 'X'
-            statusMsg.textContent = `X's turn`
-        }
-    }
-    checkWinner()
 }
