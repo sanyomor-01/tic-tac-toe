@@ -1,6 +1,8 @@
 const cell = document.querySelectorAll('.cell')
 const statusMsg = document.querySelector('.status')
 
+let running = true
+let currentPlayer = 'X'
 
 function clicked() {
     if (!running) {
@@ -40,12 +42,6 @@ cell.forEach(cell => {
 
 
 
-let running = true
-let currentPlayer = 'X'
-
-
-
-
 function checkWinner() {
     // possible winning combinations
     const winningCombos = [
@@ -82,8 +78,8 @@ function checkDraw() {
     let boardfull = true
 
     cell.forEach(cell => {
-        if (cell.textContent !== '') {
-            let boardfull = false
+        if (cell.textContent == '') {
+            boardfull = false
         }
     })
 
