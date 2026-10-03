@@ -1,5 +1,6 @@
 const cell = document.querySelectorAll('.cell')
 const statusMsg = document.querySelector('.status')
+const restart = document.querySelector('#restart')
 
 let running = true
 let currentPlayer = 'X'
@@ -39,7 +40,6 @@ function clicked() {
 cell.forEach(cell => {
     cell.addEventListener('click', clicked)
 })
-
 
 
 function checkWinner() {
@@ -84,4 +84,15 @@ function checkDraw() {
     })
 
     return boardfull
+}
+restart.addEventListener('click', restartGame)
+// restarting 
+function restartGame() {
+    // clear all cells
+    cell.forEach(cell => {
+        cell.textContent = ''
+    })
+    running = true
+    currentPlayer = 'X'
+    statusMsg.textContent = `X's turn`
 }
