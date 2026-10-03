@@ -1,22 +1,11 @@
 const cell = document.querySelectorAll('.cell')
 const statusMsg = document.querySelector('.status')
-cell.forEach(cell => {
-    cell.addEventListener('click', clicked)
-})
-
-
-
-let running = true
-let currentPlayer = 'X'
-
 
 
 function clicked() {
     if (!running) {
         return
     }
-
-    let index = this.getAttribute('data-index')
 
     if (this.textContent === '') {
         this.textContent = currentPlayer
@@ -35,11 +24,29 @@ function clicked() {
         if (winner) {
             running = false
         }
+        else {
+            let draw = checkDraw()
+            if (draw) {
+                statusMsg.textContent = `Draw`
+                running = false
+            }
+        }
     }
 }
 
-function checkWinner() {
+cell.forEach(cell => {
+    cell.addEventListener('click', clicked)
+})
 
+
+
+let running = true
+let currentPlayer = 'X'
+
+
+
+
+function checkWinner() {
     // possible winning combinations
     const winningCombos = [
         [0, 1, 2],
@@ -67,4 +74,18 @@ function checkWinner() {
     }
     return false
 
+}
+
+// checking for draw 
+function checkDraw() {
+
+    let boardfull = true
+
+    cell.forEach(cell => {
+        if (cell.textContent !== '') {
+            let boardfull = false
+        }
+    })
+
+    return boardfull
 }
