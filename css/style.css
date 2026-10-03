@@ -8,32 +8,79 @@ html {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  width: 270px;
-  height: 270px;
-  gap: 4px;
+  width: 280px;
+  height: 280px;
+  gap: 2px;
+}
+
+header {
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+h1 {
+  color: #af27d8;
+  font-size: 40px;
+}
+.status {
+  font-size: 20px;
+  font-weight: 500;
+  color: hsl(286, 69%, 15%);
+}
+.blue {
+  color: hsl(212, 100%, 70%);
 }
 .cell {
-  border: 1.5px solid #e5e5e5;
+  border: 1px solid hsl(212, 100%, 96%);
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 2px;
+  font-size: 20px;
+  font-weight: 600;
+  background: hsl(212, 100%, 92%);
   transition: background ease-in-out 0.15s;
 }
-.cell:hover {
-  background-color: hsl(271, 72%, 98%);
+.cell:empty:hover {
+  background-color: hsl(212, 100%, 89%);
 }
+
 body {
   display: flex;
   justify-content: center;
   min-height: 100vh;
   align-items: center;
-  background:;
+  background: hsl(212, 100%, 94%);
 }
 main {
   display: flex;
   gap: 24px;
   flex-direction: column;
   align-items: center;
+}
+.exes {
+  background: #af27d8;
+  color: #ffffff;
+}
+.oes {
+  background: hsl(212, 100%, 80%);
+  color: #af27d8;
+}
+
+#restart {
+  outline: none;
+  border: none;
+  font-size: 20px;
+  padding: 10px 24px;
+  background: #af27d8;
+  color: hsl(212, 100%, 92%);
+  cursor: pointer;
+  transition: background ease-in-out 0.25s;
+}
+#restart:hover {
+  background: hsl(212, 100%, 90%);
+  color: #af27d8;
 }

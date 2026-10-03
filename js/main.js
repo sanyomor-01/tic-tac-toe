@@ -2,6 +2,7 @@ const cell = document.querySelectorAll('.cell')
 const statusMsg = document.querySelector('.status')
 const restart = document.querySelector('#restart')
 
+
 let running = true
 let currentPlayer = 'X'
 
@@ -14,10 +15,12 @@ function clicked() {
         this.textContent = currentPlayer
         if (currentPlayer === 'X') {
             currentPlayer = 'O'
+            this.classList.add('exes')
             statusMsg.textContent = `O's turn`
         }
         else {
             currentPlayer = 'X'
+            this.classList.add('oes')
             statusMsg.textContent = `X's turn`
         }
     }
@@ -91,6 +94,8 @@ function restartGame() {
     // clear all cells
     cell.forEach(cell => {
         cell.textContent = ''
+        cell.classList.remove('exes')
+        cell.classList.remove('oes')
     })
     running = true
     currentPlayer = 'X'
