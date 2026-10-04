@@ -25,27 +25,27 @@ h1 {
   font-size: 40px;
 }
 .status {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 500;
-  color: hsl(286, 69%, 15%);
+  color: hsl(212, 100%, 92%);
 }
 .blue {
   color: hsl(212, 100%, 70%);
 }
 .cell {
-  border: 1px solid hsl(212, 100%, 96%);
+  border: 1px solid hsl(0, 0%, 25%);
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 2px;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 600;
-  background: hsl(212, 100%, 92%);
+  background: hsl(0, 0%, 15px);
   transition: background ease-in-out 0.15s;
 }
 .cell:empty:hover {
-  background-color: hsl(212, 100%, 89%);
+  background-color: hsl(0, 0%, 16%);
 }
 
 body {
@@ -53,7 +53,7 @@ body {
   justify-content: center;
   min-height: 100vh;
   align-items: center;
-  background: hsl(212, 100%, 98%);
+  background: hsl(0, 0%, 12%);
 }
 main {
   display: flex;
@@ -78,7 +78,7 @@ main {
   background: #af27d8;
   color: hsl(212, 100%, 92%);
   cursor: pointer;
-  transition: background ease-in-out 0.25s;
+  transition: background ease-in-out 0.15s;
 }
 #restart:hover {
   background: hsl(212, 100%, 90%);
