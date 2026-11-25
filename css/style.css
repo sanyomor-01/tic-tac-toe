@@ -8,9 +8,9 @@ html {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  width: 280px;
-  height: 280px;
-  gap: 2px;
+  width: 300px;
+  height: 300px;
+  gap: calc(0.25rem * 2);
 }
 
 header {
@@ -25,27 +25,35 @@ h1 {
   font-size: 40px;
 }
 .status {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
-  color: hsl(212, 100%, 92%);
+  color: hsl(0, 0%, 0%);
+  padding: 12px 16px;
+  outline: 1px solid hsl(0, 0%, 0%);
+  box-shadow:
+    4px 4px 0px 0px #000000,
+    4px 4px 0px 0px #000000;
 }
+
 .blue {
   color: hsl(212, 100%, 70%);
 }
 .cell {
-  border: 1px solid hsl(0, 0%, 25%);
+  outline: 1px solid #000000;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 2px;
-  font-size: 24px;
+  box-shadow:
+    4px 4px 0px 0px #000000,
+    4px 4px 0px 0px #000000;
+  font-size: 48px;
   font-weight: 600;
-  background: hsl(0, 0%, 15px);
+  background: hsl(32, 96%, 99%);
   transition: background ease-in-out 0.15s;
 }
 .cell:empty:hover {
-  background-color: hsl(0, 0%, 16%);
+  background-color: hsl(212, 100%, 96%);
 }
 
 body {
@@ -53,7 +61,7 @@ body {
   justify-content: center;
   min-height: 100vh;
   align-items: center;
-  background: hsl(0, 0%, 12%);
+  background: hsl(212, 100%, 96%);
 }
 main {
   display: flex;
@@ -62,18 +70,19 @@ main {
   align-items: center;
 }
 .exes {
-  background: #af27d8;
-  color: #ffffff;
+  color: #af27d8;
 }
 .oes {
-  background: hsl(212, 100%, 80%);
-  color: #af27d8;
+  color: hsl(212, 100%, 80%);
 }
 
 #restart {
-  outline: none;
-  border: none;
-  font-size: 20px;
+  outline: 1px solid hsl(0, 0%, 0%);
+  border: 1px solid #000000;
+  box-shadow:
+    4px 4px 0px 0px #000000,
+    4px 4px 0px 0px #000000;
+  font-size: 16px;
   padding: 10px 24px;
   background: #af27d8;
   color: hsl(212, 100%, 92%);
@@ -81,6 +90,5 @@ main {
   transition: background ease-in-out 0.15s;
 }
 #restart:hover {
-  background: hsl(212, 100%, 90%);
-  color: #af27d8;
+  background: hsl(286, 69%, 60%);
 }

@@ -16,12 +16,12 @@ function clicked() {
         if (currentPlayer === 'X') {
             currentPlayer = 'O'
             this.classList.add('exes')
-            statusMsg.textContent = `O's turn`
+            statusMsg.textContent = `Your turn O`
         }
         else {
             currentPlayer = 'X'
             this.classList.add('oes')
-            statusMsg.textContent = `X's turn`
+            statusMsg.textContent = `Your turn X`
         }
     }
 
@@ -99,5 +99,5 @@ function restartGame() {
     })
     running = true
     currentPlayer = 'X'
-    statusMsg.textContent = `X's turn`
+    statusMsg.textContent = `Your turn X`
 }
